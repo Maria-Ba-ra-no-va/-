@@ -1,0 +1,386 @@
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'PTSans';
+    src: local('PTSans-Regular'), url(fonts/PTSans-Regular.woff2) format(woff2), url(fonts/PTSans-Regular.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PTSans';
+    src: local('PTSans-Bold'), url(fonts/PTSans-Bold.woff2) format(woff2), url(fonts/PTSans-Bold.woff) format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat-ExtraBold'), url(fonts/Montserrat-ExtraBold.woff2) format(woff2), url(fonts/Montserrat-ExtraBold.woff) format("woff");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: local('Lato-Semibold'), url(fonts/Lato-Semibold.woff2) format(woff2), url(fonts/Lato-Semibold.woff) format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+.open-modal {
+    position: absolute;
+    top: 250px;
+    left: calc(50% - 96px);
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    border-radius: 4px;
+    border: none;
+    background: #E5266E;
+    padding-top: 14px;
+    padding-bottom: 16px;
+    cursor: pointer;
+}
+
+.modal-background {
+    display: none;
+    background: rgba(0, 0, 0, 0.42);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+    overflow: auto;
+}
+
+.modal {
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 377px);
+    max-width: 754px;
+    width: 100%;
+    height: fit-content;
+    padding: 53px 98px;
+    border-radius: 12px;
+    background: #FFF;
+    z-index: 10;
+    overflow-y: scroll;
+    cursor: default;
+}
+
+.modal__title {
+    color: #0C1014;
+    font-family: 'Montserrat';
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 34px;
+    margin-bottom: 35px;
+}
+
+.modal__form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "company company image"
+        "tel tel image"
+        "email email image"
+        "select select select"
+        "website website website"
+        "vk vk vk"
+        "ok ok ok"
+        "fk fk fk"
+        "inst inst inst"
+        "youtube youtube youtube"
+        "name name name"
+        "btn-pink btn-pink btn-pink"
+        "btn-transparent btn-transparent btn-transparent";
+    row-gap: 32px;
+    column-gap: 26px;
+}
+
+.form__input-company {
+    grid-area: company;
+}
+
+.form__input-tel {
+    grid-area: tel;
+}
+
+.form__input-email {
+    grid-area: email;
+}
+
+.form__input-image {
+    grid-area: image;
+    display: flex;
+    flex-direction: column;
+    height: 205px;
+    width: 163px;
+}
+
+.form__select-div {
+    grid-area: select;
+}
+
+.form__input-tel {
+    grid-area: tel;
+}
+
+.form__input-website {
+    grid-area: website;
+}
+
+.form__input-vk {
+    grid-area: vk;
+}
+
+.form__input-ok {
+    grid-area: ok;
+}
+
+.form__input-fk {
+    grid-area: fk;
+}
+
+.form__input-inst {
+    grid-area: inst;
+}
+
+.form__input-youtube {
+    grid-area: youtube;
+}
+
+.form__input-name {
+    grid-area: name;
+}
+
+.form__btn-pink {
+    grid-area: btn-pink;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    border-radius: 4px;
+    border: none;
+    background: #E5266E;
+    padding-top: 14px;
+    padding-bottom: 16px;
+    cursor: pointer;
+}
+
+.form__btn-transparent {
+    grid-area: btn-transparent;
+    background: transparent;
+    border: none;
+    color: #0848C0;
+    font-family: 'PT Sans';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.modal__form input,
+.modal__form select {
+    min-height: 56px;
+    width: 100%;
+    border: 1px solid #D6DADE;
+    padding: 22px 16px 8px 16px;
+    color: #0C1014;
+    font-family: 'PT Sans';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.form__select-div::before {
+    content: '';
+    position: absolute;
+    top: 19px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background-image: url(images/select.svg);
+    background-repeat: no-repeat;
+}
+
+.select-div__select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.input-div {
+    position: relative;
+}
+
+.form .input-company__label,
+.form .input-tel__label,
+.form .input-email__label,
+.form .select-div__label,
+.form .input-name__label,
+.form .input-image__label {
+    position: absolute;
+    top: 8px;
+    left: 28px;
+    color: #6A6E72;
+    font-family: 'PT Sans';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.form .input-name__label {
+    left: 16px;
+}
+
+.form__input-company::after,
+.form__input-tel::after,
+.form__input-email::after,
+.form__select-div::after,
+.form__input-image::after {
+    content: '✱';
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    color: #D90000;
+    font-family: 'PT Sans';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.form__input-image::after {
+    top: 4px;
+}
+
+.form .input-image__label {
+    color: #6A6E72;
+    font-family: 'PT Sans';
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    top: 0;
+}
+
+.form__input-image {
+    background: url(images/photo.png) no-repeat 0px 37px;
+}
+
+.form .input-image__input {
+    padding: 0;
+    margin-top: 76px;
+    min-height: auto;
+}
+
+.form__input-image::before {
+    content: 'Выберите файл';
+    position: absolute;
+    top: 112px;
+    align-items: center;
+    color: #FFF;
+    left: 40px;
+    text-align: center;
+    font-family: 'PT Sans';
+    font-size: 18.667px;
+    font-weight: 400;
+    line-height: 28px;
+    text-decoration-line: underline;
+    max-width: 80px;
+    cursor: pointer;
+}
+
+.form__input-image input {
+    border: none;
+}
+
+.form__input-image .close {
+    border: none;
+    background: transparent;
+    width: 36px;
+    height: 36px;
+    background-image: url(images/close.svg);
+    background-repeat: no-repeat;
+    z-index: 10;
+    position: absolute;
+    top: 46px;
+    right: 3px;
+    cursor: pointer;
+}
+
+.form__input-website::before,
+.form__input-vk::before,
+.form__input-ok::before,
+.form__input-fk::before,
+.form__input-inst::before,
+.form__input-youtube::before {
+    content: '';
+    position: absolute;
+    top: 19px;
+    right: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+}
+
+.form__input-website::before {
+    background-image: url(images/website.svg);
+}
+
+.form__input-vk::before {
+    background-image: url(images/vk.svg);
+}
+
+.form__input-ok::before {
+    background-image: url(images/ok.svg);
+}
+
+.form__input-fk::before {
+    background-image: url(images/fk.svg);
+}
+
+.form__input-inst::before {
+    background-image: url(images/inst.svg);
+}
+
+.form__input-youtube::before {
+    background-image: url(images/youtube.svg);
+}

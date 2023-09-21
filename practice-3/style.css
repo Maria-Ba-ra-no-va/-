@@ -1,0 +1,51 @@
+html {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 30px auto;
+}
+
+table {
+    border-spacing: 0 1px;
+}
+
+th {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000;
+    align-items: center;
+    padding: 10px;
+    background: #E5E5E5;
+}
+
+tbody {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+td {
+    padding: 10px;
+}
+
+.td-id {
+    text-align: center;
+}
+
+input{
+    margin-bottom: 30px;
+}

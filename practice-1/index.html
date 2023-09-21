@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cтать партнером проекта</title>
+    <link rel="preload" href="fonts/PTSans-Regular.woff2" as="font">
+    <link rel="preload" href="fonts/Montserrat-ExtraBold.woff2" as="font">
+    <link rel="preload" href="fonts/Lato-Semibold.woff2" as="font">
+    <link rel="preload" href="fonts/PTSans-Bold.woff2" as="font">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+    <button class="open-modal">Открыть модальное окно</button>
+    <div class="modal-background">
+        <div class="modal">
+            <h2 class="modal__title">Стать партнёром проекта</h2>
+            <form action="#" class="modal__form form">
+                <div class="form__input-company input-company input-div">
+                    <label class="input-company__label">Название организации</label>
+                    <input type="text" class="input-company__input" name="company">
+                </div>
+                <div class="form__input-tel input-tel input-div">
+                    <label class="input-tel__label">Телефон</label>
+                    <input type="tel" class="input-tel__input" name="tel"
+                        pattern="7-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                </div>
+                <div class="form__input-email input-email input-div">
+                    <label class="input-email__label">E-mail</label>
+                    <input type="email" class="input-email__input" name="email">
+                </div>
+                <div class="form__input-image input-image input-div">
+                    <label class="input-image__label">Логотип (jpeg, png)</label>
+                    <input type="image" name="image" src="images/Vector.svg" width="29" height="29"
+                        class="input-image__input" />
+                    <button class="close"></button>
+                </div>
+                <div class="form__select-div select-div input-div">
+                    <label class="select-div__label">Направление</label>
+                    <select class="select-div__select">
+                        <option value="ecology">Экология</option>
+                        <option value="mathematics">Математика</option>
+                        <option value="IT">Информационные технологии</option>
+                    </select>
+                </div>
+                <div class="form__input-website input-website input-div">
+                    <input type="text" class="input-website__input" name="input-website" pattern="^[a-zA-Z0-9]+$">
+                </div>
+                <div class="form__input-vk input-vk input-div">
+                    <input type="text" class="input-vk__input" name="vk" pattern="^[a-zA-Z0-9]+$">
+                </div>
+                <div class="form__input-ok input-ok input-div">
+                    <input type="text" class="input-ok__input" name="ok" pattern="^[a-zA-Z0-9]+$">
+                </div>
+                <div class="form__input-fk input-fk input-div">
+                    <input type="text" class="input-fk__input" name="fk" pattern="^[a-zA-Z0-9]+$">
+                </div>
+                <div class="form__input-inst input-inst input-div">
+                    <input type="text" class="input-inst__input" name="inst" pattern="^[a-zA-Z0-9]+$">
+                </div>
+                <div class="form__input-youtube input-youtube input-div">
+                    <input type="text" class="input-youtube__input" name="youtube" pattern="^[a-zA-Z0-9]+$">
+                </div>
+                <div class="form__input-name input-name input-div">
+                    <label class="input-name__label">Руководитель</label>
+                    <input type="text" class="input-name__input" name="name">
+                </div>
+                <button class="form__btn-pink" type="submit">Стать партнёром проекта</button>
+                <button class="form__btn-transparent">Отменить</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

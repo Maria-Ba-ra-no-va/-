@@ -1,0 +1,34 @@
+Данный код выводит в консоли:
+Bad:undefined
+Bad:undefined
+Bad:undefined
+Bad:undefined
+
+Чтобы ответ получился:
+Bad:10
+Bad:12
+Good:15
+Good:21
+
+можно:
+1)убрать setTimeout:
+const arr= [10, 12, 15, 21];
+
+for (var i=0; i< arr.length; i++){
+        console.log(arr[i]>13?`Good:${arr[i]}`: `Bad:${arr[i]}`)
+}
+2) обернуть setTimeout в ожидание Promise, в каждой итерации выводить результат Promise,цикл при этом необходимо обернуть в асинхронную функцию и вызвать ее.
+const arr = [10, 12, 15, 21];
+
+const func = async () => {
+    for (var i = 0; i < arr.length; i++) {
+
+        let result = await new Promise((resolve, reject) => {
+            setTimeout(function () {
+                resolve(arr[i] > 13 ? `Good:${arr[i]}` : `Bad:${arr[i]}`);
+            }, 3000);
+        })
+        console.log(result)
+    }
+};
+func();
